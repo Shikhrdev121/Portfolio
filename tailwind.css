@@ -1,5 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 .glass-nav {
@@ -42,7 +46,6 @@
   }
 }
 
-/* Keep sections aligned below the fixed navbar when using anchor navigation. */
 section[id] {
   scroll-margin-top: var(--nav-offset, 96px);
 }
