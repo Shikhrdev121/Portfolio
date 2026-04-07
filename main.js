@@ -1,5 +1,4 @@
-dwoocument.addEventListener("DOMContentLoaded", () => {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector('header');
   const headerOffset = () => header ? header.getBoundingClientRect().height : 0;
 
@@ -10,60 +9,65 @@ dwoocument.addEventListener("DOMContentLoaded", () => {
   setNavOffsetVar();
   window.addEventListener('resize', setNavOffsetVar);
 
-  // Smooth wheel scroll (mouse wheel only)
-  if (!prefersReducedMotion) {
-    const scrollingElement = document.scrollingElement || document.documentElement;
-    let targetScrollTop = scrollingElement.scrollTop;
-    let isTicking = false;
-
-    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-    const animate = () => {
-      isTicking = true;
-      const current = scrollingElement.scrollTop;
-      const next = current + (targetScrollTop - current) * 0.18;
-      scrollingElement.scrollTop = Math.abs(next - targetScrollTop) < 0.5 ? targetScrollTop : next;
-      if (Math.abs(scrollingElement.scrollTop - targetScrollTop) > 0.5) requestAnimationFrame(animate);
-      else isTicking = false;
-    };
-
-    window.addEventListener('wheel', (event) => {
-      if (event.ctrlKey || Math.abs(event.deltaY) < 50) return;
-      event.preventDefault();
-      const multiplier = event.deltaMode === 1 ? 32 : 1;
-      targetScrollTop = clamp(targetScrollTop + event.deltaY * multiplier, 0, document.documentElement.scrollHeight - window.innerHeight);
-      if (!isTicking) requestAnimationFrame(animate);
-    }, { passive: false });
-  }
-
   const navLinks = document.querySelectorAll('.nav-link');
-  const setActiveLink = (activeLink) => navLinks.forEach(l => l.classList.toggle('active', l === activeLink));
-
-  // Navbar click handlers + smooth scroll
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      setActiveLink(link);
-      const target = document.querySelector(link.getAttribute('href'));
-      if (!target) return;
-      const y = target.getBoundingClientRect().top + window.scrollY - headerOffset() - 20;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    });
-  });
+  const setActiveHref = (activeHref) => navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === activeHref));
 
   // Active link on scroll (IntersectionObserver)
   const sections = Array.from(navLinks, link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-  const navLinksById = new Map([...navLinks].map(link => [link.getAttribute('href').slice(1), link]));
 
-  const observerOptions = {
-    rootMargin: `-${headerOffset() + 12}px 0px -25% 0px`,
-    threshold: [0, 0.25, 0.5]
+  let observer = null;
+  const initObserver = () => {
+    if (observer) observer.disconnect();
+    observer = new IntersectionObserver((entries) => {
+      const topMost = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (topMost) setActiveHref(`#${topMost.target.id}`);
+    }, {
+      rootMargin: `-${headerOffset() + 12}px 0px -25% 0px`,
+      threshold: [0, 0.25, 0.5]
+    });
+
+    sections.forEach(section => observer.observe(section));
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    const topMost = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (topMost) setActiveLink(navLinksById.get(topMost.target.id));
-  }, observerOptions);
+  initObserver();
+  let resizeRaf = null;
+  window.addEventListener('resize', () => {
+    if (resizeRaf) cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => {
+      resizeRaf = null;
+      initObserver();
+    });
+  });
 
-  sections.forEach(section => observer.observe(section));
-  window.addEventListener('resize', () => observer.disconnect() || observer.observe(sections));
+  // Mobile hamburger menu toggle
+  const hamburger = document.querySelector('button.md\\:hidden');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = hamburger?.querySelector('.menu-icon');
+  if (hamburger && mobileMenu && menuIcon) {
+    const setMenuOpen = (open) => {
+      mobileMenu.classList.toggle('hidden', !open);
+      hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuIcon.textContent = open ? 'close' : 'menu';
+      menuIcon.setAttribute('data-icon', open ? 'close' : 'menu');
+      document.body.classList.toggle('overflow-hidden', open);
+    };
+
+    hamburger.addEventListener('click', () => {
+      setMenuOpen(mobileMenu.classList.contains('hidden'));
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    });
+
+    // Close on nav link click
+    document.querySelectorAll('#mobile-menu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        setMenuOpen(false);
+      });
+    });
+  }
 });
