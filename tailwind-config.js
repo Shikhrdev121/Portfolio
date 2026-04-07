@@ -5,6 +5,10 @@ window.tailwind.config = {
   theme: {
     extend: {
       colors: {
+        "background-light": "#f6f7f8",
+        "background-dark": "#121920",
+        "surface-dark": "#1a232e",
+        "on-surface-dark": "#e2e8f0",
         "outline-variant": "#acb3b7",
         "surface-container-low": "#f0f4f7",
         outline: "#747c80",
@@ -13,7 +17,7 @@ window.tailwind.config = {
         "on-primary": "#f7f9ff",
         "surface-variant": "#dce4e8",
         "inverse-surface": "#0b0f10",
-        primary: "#49617f",
+        primary: "#0A2540",
         "on-secondary-fixed-variant": "#515c6d",
         "on-secondary-container": "#475363",
         "on-primary-container": "#334b67",

@@ -2,6 +2,12 @@ html {
   scroll-behavior: auto;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+}
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
@@ -9,6 +15,10 @@ html {
 .glass-nav {
   background: rgba(247, 249, 251, 0.8);
   backdrop-filter: blur(20px);
+}
+
+.dark .glass-nav {
+  background: rgba(2, 6, 23, 0.75);
 }
 
 .lithic-button {
@@ -30,6 +40,57 @@ html {
   transform: scale(1.05) translateY(-2px);
 }
 
+.dark .nav-link.active {
+  color: #f1f5f9 !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* Minimal Dark Mode Enforcement - Full Site Black Theme */
+body.dark {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.dark main section {
+  background-color: #0a0a0a !important;
+}
+
+.dark footer {
+  background-color: #111111 !important;
+}
+
+.dark .bg-surface,
+.dark .bg-surface-container-low,
+.dark .bg-surface-container {
+  background-color: #000000 !important;
+}
+
+.dark .bg-surface-container-highest,
+.dark .bg-surface-container-high,
+.dark .bg-surface-container-lowest {
+  background-color: #1a1a1a !important;
+}
+
+.dark img,
+.dark .hero-coding-image {
+  filter: brightness(0.7) contrast(1.1);
+}
+
+.dark .aspect-square,
+.dark [class*="bg-surface"] {
+  background-color: rgba(0,0,0,0.8) !important;
+}
+
+/* Mobile menu dark */
+.dark #mobile-menu {
+  background-color: #0a0a0a;
+}
+
+/* Smooth transitions */
+body, section, footer, .glass-nav {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Mobile nav enhancements */
 #mobile-menu:not(.hidden) {
   animation: slideDown 0.3s ease-out;
@@ -46,26 +107,19 @@ html {
   }
 }
 
-/* Subtle auto-transform for hero coding image */
+/* Hero image */
 .hero-coding-image {
   will-change: transform;
   animation: heroFloat 10s ease-in-out infinite;
 }
 
 @keyframes heroFloat {
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.03);
-  }
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.03); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-coding-image {
-    animation: none;
-  }
+  .hero-coding-image { animation: none; }
 }
 
 section[id] {
