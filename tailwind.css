@@ -25,3 +25,8 @@
   border-bottom: 2px solid #0a2540 !important;
   transform: scale(1.05) translateY(-2px);
 }
+
+/* Keep sections aligned below the fixed navbar when using anchor navigation. */
+section[id] {
+  scroll-margin-top: var(--nav-offset, 96px);
+}

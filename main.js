@@ -3,6 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const header = document.querySelector("header");
+  const headerOffset = () => (header ? header.getBoundingClientRect().height : 0);
+
+  const setNavOffsetVar = () => {
+    const offsetPx = Math.round(headerOffset() + 12);
+    document.documentElement.style.setProperty("--nav-offset", `${offsetPx}px`);
+  };
+
+  setNavOffsetVar();
+  window.addEventListener("resize", setNavOffsetVar);
+
+
   // Smooth mouse-wheel scrolling (Windows wheel can feel "hard"/steppy).
   // Applies only to classic wheel deltas (not trackpad micro-deltas).
   if (!prefersReducedMotion) {
@@ -55,13 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const navLinks = document.querySelectorAll(".nav-link");
+  const navLinksById = new Map();
+
+  navLinks.forEach((link) => {
+    const href = link.getAttribute("href") || "";
+    if (!href.startsWith("#") || href.length < 2) return;
+    navLinksById.set(href.slice(1), link);
+  });
+
+  const setActiveLink = (activeLink) => {
+    navLinks.forEach((l) => l.classList.toggle("active", l === activeLink));
+  };
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
-
-      navLinks.forEach((l) => l.classList.remove("active"));
-      link.classList.add("active");
+      setActiveLink(link);
 
       const targetId = link.getAttribute("href");
       if (!targetId) return;
@@ -70,13 +91,19 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!targetSection) return;
 
       if (prefersReducedMotion) {
-        targetSection.scrollIntoView({ block: "start" });
+        const y =
+          targetSection.getBoundingClientRect().top +
+          window.scrollY -
+          headerOffset();
+        window.scrollTo(0, y);
         return;
       }
 
       const startY = window.scrollY;
       const targetY =
-        targetSection.getBoundingClientRect().top + window.scrollY;
+        targetSection.getBoundingClientRect().top +
+        window.scrollY -
+        headerOffset();
       const distance = targetY - startY;
       const durationMs = 280;
       const startTime = performance.now();
@@ -93,4 +120,56 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(step);
     });
   });
+
+  // Update active nav item based on scroll position.
+  if ("IntersectionObserver" in window && navLinksById.size) {
+    const sections = Array.from(navLinksById.keys())
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const pickActive = (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
+
+      const topMost = visible[0];
+      if (!topMost) return;
+
+      const activeLink = navLinksById.get(topMost.target.id);
+      if (activeLink) setActiveLink(activeLink);
+    };
+
+    let lastEntries = [];
+    let observer = null;
+
+    const setupObserver = () => {
+      if (observer) observer.disconnect();
+      lastEntries = [];
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const idx = lastEntries.findIndex((e) => e.target === entry.target);
+            if (idx >= 0) lastEntries[idx] = entry;
+            else lastEntries.push(entry);
+          });
+          pickActive(lastEntries);
+        },
+        {
+          root: null,
+          // Treat area under the fixed header as the "top" of the viewport.
+          rootMargin: `-${Math.round(headerOffset() + 12)}px 0px -55% 0px`,
+          threshold: [0.15, 0.3, 0.45, 0.6, 0.75],
+        },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    };
+
+    setupObserver();
+
+    window.addEventListener("resize", () => {
+      setupObserver();
+    });
+  }
 });
