@@ -1,0 +1,27 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.glass-nav {
+  background: rgba(247, 249, 251, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.lithic-button {
+  background: linear-gradient(135deg, #49617f 0%, #3d5572 100%);
+}
+
+.nav-link {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  transform: scale(1.05) translateY(-2px);
+}
+
+.nav-link.active {
+  color: #1f2937 !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #0a2540 !important;
+  transform: scale(1.05) translateY(-2px);
+}
