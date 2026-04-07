@@ -26,6 +26,22 @@
   transform: scale(1.05) translateY(-2px);
 }
 
+/* Mobile nav enhancements */
+#primary-nav:not(.hidden) {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Keep sections aligned below the fixed navbar when using anchor navigation. */
 section[id] {
   scroll-margin-top: var(--nav-offset, 96px);

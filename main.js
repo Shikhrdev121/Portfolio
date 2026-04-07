@@ -66,6 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById("mobile-menu-btn");
+  const primaryNav = document.getElementById("primary-nav");
+  if (mobileBtn && primaryNav) {
+    mobileBtn.addEventListener("click", () => {
+      primaryNav.classList.toggle("hidden");
+    });
+    // Close on nav link click
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        primaryNav.classList.add("hidden");
+      });
+    });
+  }
+
   const navLinks = document.querySelectorAll(".nav-link");
   const navLinksById = new Map();
 
@@ -157,10 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           root: null,
-          // Treat area under the fixed header as the "top" of the viewport.
-          rootMargin: `-${Math.round(headerOffset() + 12)}px 0px -55% 0px`,
-          threshold: [0.15, 0.3, 0.45, 0.6, 0.75],
+          rootMargin: `-${Math.round(headerOffset() + 12)}px 0px -25% 0px`,
+          threshold: [0, 0.25, 0.5],
         },
+
       );
 
       sections.forEach((section) => observer.observe(section));
