@@ -30,13 +30,13 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="min-h-screen bg-surface pt-20 text-on-surface antialiased">
-    <header class="fixed inset-x-0 top-0 z-50 border-b border-outline/40 bg-white">
-        <nav class="mx-auto flex max-w-6xl items-center gap-4 px-6 py-4">
+<body class="min-h-screen bg-surface text-on-surface antialiased">
+    <header class="sticky top-0 z-50 border-b border-outline/40 bg-white">
+        <nav class="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4">
             <span class="material-symbols-outlined text-primary" aria-hidden="true">terminal</span>
             <span class="text-base sm:text-xl font-extrabold tracking-tighter text-slate-900 font-mono">S.DEV // PRECISION</span>
 
-            <div class="ml-auto flex items-center gap-4 sm:gap-6 text-sm font-semibold">
+            <div class="flex w-full items-center justify-start gap-4 text-sm font-semibold sm:ml-auto sm:w-auto sm:justify-end sm:gap-6">
                 <a class="nav-link" href="#home">Home</a>
                 <a class="nav-link" href="#about">About</a>
                 <a class="nav-link" href="#skills">Skills</a>
@@ -45,7 +45,7 @@
         </nav>
     </header>
 
-    <main id="home" class="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 lg:flex-row lg:items-center">
+    <main id="home" class="mx-auto flex max-w-6xl scroll-mt-24 flex-col gap-10 px-6 py-16 lg:flex-row lg:items-center">
         <section class="space-y-6 lg:w-1/2">
             <p class="glass-pill inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-on-surface">
                 <span class="h-2 w-2 rounded-full bg-primary"></span>
@@ -85,21 +85,21 @@
         </figure>
     </main>
 
-    <section id="about" class="mx-auto max-w-6xl px-6 pb-16">
+    <section id="about" class="mx-auto max-w-6xl scroll-mt-24 px-6 pb-16">
         <div class="rounded-2xl border border-outline/40 bg-surface-container-high p-6 sm:p-10">
             <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">About</h2>
             <p class="mt-3 text-slate-700">Add your short bio here.</p>
         </div>
     </section>
 
-    <section id="skills" class="mx-auto max-w-6xl px-6 pb-16">
+    <section id="skills" class="mx-auto max-w-6xl scroll-mt-24 px-6 pb-16">
         <div class="rounded-2xl border border-outline/40 bg-surface-container-high p-6 sm:p-10">
             <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">Skills</h2>
             <p class="mt-3 text-slate-700">Add your skills list here.</p>
         </div>
     </section>
 
-    <section id="projects" class="mx-auto max-w-6xl px-6 pb-24">
+    <section id="projects" class="mx-auto max-w-6xl scroll-mt-24 px-6 pb-24">
         <div class="rounded-2xl border border-outline/40 bg-surface-container-high p-6 sm:p-10">
             <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">Projects</h2>
             <p class="mt-3 text-slate-700">Add your projects here.</p>
