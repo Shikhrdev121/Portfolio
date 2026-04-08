@@ -1,348 +1,109 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>SHIKHAR.DEV | The Precision Curator</title>
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#0A2540",
-              "background-light": "#f6f7f8",
-              "background-dark": "#121920",
-              "surface-dark": "#1a232e",
-              "on-surface-dark": "#e2e8f0"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shikhar Shrivastava Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "rgb(var(--primary) / <alpha-value>)",
+                        surface: "rgb(var(--surface) / <alpha-value>)",
+                        "on-surface": "rgb(var(--on-surface) / <alpha-value>)",
+                        outline: "rgb(var(--outline) / <alpha-value>)",
+                        "surface-container-high": "rgb(var(--surface-container-high) / <alpha-value>)",
+                        "surface-container-highest": "rgb(var(--surface-container-highest) / <alpha-value>)",
+                    },
+                },
             },
-            fontFamily: {
-              "display": ["Manrope"],
-              "headline": ["Manrope"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
-      }
+        };
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-nav {
-            background: rgba(247, 249, 251, 0.8);
-            backdrop-filter: blur(20px);
-        }
-        .lithic-button {
-            background: linear-gradient(135deg, #49617f 0%, #3d5572 100%);
-        }
-    </style>
-<script>
-      function toggleDarkMode() {
-        const html = document.documentElement;
-        const isDark = html.classList.toggle('dark');
-        const icon = document.getElementById('theme-toggle-icon');
-        icon.textContent = isDark ? 'light_mode' : 'dark_mode';
-      }
-    </script><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{-webkit-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0px;padding-top:0.5rem;padding-right:0.75rem;padding-bottom:0.5rem;padding-left:0.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000;}[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);border-color:#2563eb}input::placeholder,textarea::placeholder{color:#6b7280;opacity:1}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-date-and-time-value{min-height:1.5em;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-top:0;padding-bottom:0}select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;print-color-adjust:exact}[multiple],[size]:where(select:not([size="1"])){background-image:initial;background-position:initial;background-repeat:unset;background-size:initial;padding-right:0.75rem;print-color-adjust:unset}[type='checkbox'],[type='radio']{-webkit-appearance:none;appearance:none;padding:0;print-color-adjust:exact;display:inline-block;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;user-select:none;flex-shrink:0;height:1rem;width:1rem;color:#2563eb;background-color:#fff;border-color:#6b7280;border-width:1px;--tw-shadow:0 0 #0000}[type='checkbox']{border-radius:0px}[type='radio']{border-radius:100%}[type='checkbox']:focus,[type='radio']:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:2px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}[type='checkbox']:checked,[type='radio']:checked{border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat}[type='checkbox']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='checkbox']:checked{-webkit-appearance:auto;appearance:auto}}[type='radio']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='radio']:checked{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{border-color:transparent;background-color:currentColor}[type='checkbox']:indeterminate{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat;}@media (forced-colors: active) {[type='checkbox']:indeterminate{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus{border-color:transparent;background-color:currentColor}[type='file']{background:unset;border-color:inherit;border-width:0;border-radius:0;padding:0;font-size:unset;line-height:inherit}[type='file']:focus{outline:1px solid ButtonText;outline:1px auto -webkit-focus-ring-color}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.top-0{top:0px}.-right-10{right:-2.5rem}.-top-10{top:-2.5rem}.right-0{right:0px}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-6{margin-bottom:1.5rem}.mr-2{margin-right:0.5rem}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-20{margin-top:5rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1 / 1}.aspect-video{aspect-ratio:16 / 9}.h-20{height:5rem}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-32{height:8rem}.h-full{height:100%}.min-h-\[921px\]{min-height:921px}.w-full{width:100%}.w-1\/3{width:33.333333%}.w-10{width:2.5rem}.w-12{width:3rem}.w-24{width:6rem}.w-32{width:8rem}.max-w-7xl{max-width:80rem}.max-w-2xl{max-width:42rem}.max-w-md{max-width:28rem}.translate-x-1\/2{--tw-translate-x:50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.rotate-3{--tw-rotate:3deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-skew-x-12{--tw-skew-x:-12deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-8{gap:2rem}.gap-16{gap:4rem}.gap-24{gap:6rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded-full{border-radius:9999px}.rounded-md{border-radius:0.375rem}.rounded-sm{border-radius:0.125rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-none{border-style:none}.border-\[\#0A2540\]{--tw-border-opacity:1;border-color:rgb(10 37 64 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-white\/50{border-color:rgb(255 255 255 / 0.5)}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50\/80{background-color:rgb(248 250 252 / 0.8)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(10 37 64 / var(--tw-bg-opacity, 1))}.bg-primary\/5{background-color:rgb(10 37 64 / 0.05)}.object-cover{object-fit:cover}.p-2{padding:0.5rem}.p-10{padding:2.5rem}.p-12{padding:3rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-8{padding-left:2rem;padding-right:2rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-4{padding-left:1rem;padding-right:1rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-32{padding-top:8rem;padding-bottom:8rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-1{padding-bottom:0.25rem}.pt-20{padding-top:5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-body{font-family:Inter}.font-headline{font-family:Manrope}.font-label{font-family:Inter}.text-6xl{font-size:3.75rem;line-height:1}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-black{font-weight:900}.font-light{font-weight:300}.uppercase{text-transform:uppercase}.leading-\[0\.9\]{line-height:0.9}.leading-relaxed{line-height:1.625}.tracking-tighter{letter-spacing:-0.05em}.tracking-widest{letter-spacing:0.1em}.tracking-normal{letter-spacing:0em}.tracking-tight{letter-spacing:-0.025em}.text-\[\#0A2540\]{--tw-text-opacity:1;color:rgb(10 37 64 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(10 37 64 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.opacity-60{opacity:0.6}.opacity-80{opacity:0.8}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-1000{transition-duration:1000ms}.duration-700{transition-duration:700ms}.hover\:rotate-0:hover{--tw-rotate:0deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:scale-\[1\.02\]:hover{--tw-scale-x:1.02;--tw-scale-y:1.02;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:text-slate-800:hover{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(10 37 64 / var(--tw-text-opacity, 1))}.hover\:opacity-100:hover{opacity:1}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:grayscale-0:hover{--tw-grayscale:grayscale(0);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary\/40:focus{--tw-ring-color:rgb(10 37 64 / 0.4)}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.dark\:border-b:is(.dark *){border-bottom-width:1px}.dark\:border-slate-800:is(.dark *){--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.dark\:border-white:is(.dark *){--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.dark\:border-slate-700:is(.dark *){--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.dark\:bg-background-dark:is(.dark *){--tw-bg-opacity:1;background-color:rgb(18 25 32 / var(--tw-bg-opacity, 1))}.dark\:bg-background-dark\/80:is(.dark *){background-color:rgb(18 25 32 / 0.8)}.dark\:bg-slate-800:is(.dark *){--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-900:is(.dark *){--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.dark\:bg-slate-900\/50:is(.dark *){background-color:rgb(15 23 42 / 0.5)}.dark\:bg-surface-dark:is(.dark *){--tw-bg-opacity:1;background-color:rgb(26 35 46 / var(--tw-bg-opacity, 1))}.dark\:text-on-surface-dark:is(.dark *){--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.dark\:text-slate-400:is(.dark *){--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.dark\:text-white:is(.dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.dark\:text-slate-100:is(.dark *){--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.dark\:placeholder-slate-500:is(.dark *)::placeholder{--tw-placeholder-opacity:1;color:rgb(100 116 139 / var(--tw-placeholder-opacity, 1))}.dark\:hover\:bg-slate-800:hover:is(.dark *){--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.dark\:hover\:text-white:hover:is(.dark *){--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:mb-0{margin-bottom:0px}.md\:mt-0{margin-top:0px}.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:gap-24{gap:6rem}.md\:text-left{text-align:left}.md\:text-8xl{font-size:6rem;line-height:1}.md\:text-2xl{font-size:1.5rem;line-height:2rem}}@media (min-width: 1024px){.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container dark:bg-background-dark dark:text-on-surface-dark transition-colors duration-300" data-mode="connect">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 relative bg-slate-50/80 backdrop-blur-xl dark:bg-background-dark/80 dark:border-b dark:border-slate-800">
-<nav class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
-<span class="text-xl font-extrabold tracking-tighter text-slate-900 font-headline dark:text-white">SHIKHAR.DEV</span>
-</div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-slate-900 font-bold border-b-2 border-[#0A2540] pb-1 font-manrope tracking-tighter dark:text-white dark:border-white" href="#hero">Hero</a>
-<a class="text-slate-500 hover:text-slate-800 transition-colors font-manrope tracking-tighter dark:text-slate-400 dark:hover:text-white" href="#about">About</a>
-<a class="text-slate-500 hover:text-slate-800 transition-colors font-manrope tracking-tighter dark:text-slate-400 dark:hover:text-white" href="#capabilities">Skills</a>
-<a class="text-slate-500 hover:text-slate-800 transition-colors font-manrope tracking-tighter dark:text-slate-400 dark:hover:text-white" href="#projects">Projects</a>
-<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 transition-colors mr-2 flex items-center justify-center" id="theme-toggle" type="button">
-<span class="material-symbols-outlined" id="theme-toggle-icon">dark_mode</span>
-</button><a class="px-5 py-2 rounded-md bg-slate-100 hover:bg-slate-200 text-[#0A2540] font-bold transition-all duration-300" href="#contact">Contact</a>
-</div>
-<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle menu" class="md:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors" type="button">
-<span class="material-symbols-outlined menu-icon" data-icon="menu">menu</span>
-</button>
-</nav>
-<div class="hidden md:hidden absolute top-full left-0 w-full bg-slate-50/95 backdrop-blur-xl dark:bg-background-dark/95 border-t border-slate-200 dark:border-slate-800 shadow-xl" id="mobile-menu">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-2">
-    <a class="block px-4 py-3 rounded-md text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 transition-colors" href="#hero">Hero</a>
-    <a class="block px-4 py-3 rounded-md text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 transition-colors" href="#about">About</a>
-    <a class="block px-4 py-3 rounded-md text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 transition-colors" href="#capabilities">Skills</a>
-    <a class="block px-4 py-3 rounded-md text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 transition-colors" href="#projects">Projects</a>
-    <div class="flex items-center justify-between px-4 py-3 rounded-md text-slate-700 dark:text-slate-200">
-      <span class="font-manrope tracking-tighter">Theme</span>
-      <button class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" id="theme-toggle-mobile" type="button">
-        <span class="material-symbols-outlined" data-icon="dark_mode" id="theme-toggle-icon-mobile">dark_mode</span>
-      </button>
-    </div>
-    <a class="block px-4 py-3 rounded-md bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-[#0A2540] dark:text-on-surface-dark font-bold transition-colors" href="#contact">Contact</a>
-  </div>
-</div>
-</header>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="relative min-h-screen sm:min-h-[600px] lg:min-h-[80vh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden" id="hero">
-<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-<div class="lg:col-span-7 z-10">
-<span class="inline-block py-1 px-3 rounded-sm bg-secondary-fixed-dim text-on-secondary-fixed font-label text-xs tracking-widest uppercase mb-6">Available for Projects</span>
-<h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-headline font-extrabold tracking-tighter text-on-surface mb-4 sm:mb-6 leading-[0.85]">
-                        SHIKHAR <br>
-<span class="text-primary dark:text-white">SRIVASTAV</span>
-</h1>
-<p class="text-base sm:text-lg md:text-xl lg:text-2xl text-on-surface-variant font-light max-w-2xl mb-6 sm:mb-10 leading-relaxed">
-                        Web Developer specializing in <span class="bg-primary-container px-1 text-on-primary-container">PHP architecture</span>, AI Prompting, and strategic SEO implementations for the modern web.
-                    </p>
-<div class="flex flex-wrap gap-3 sm:gap-4">
-<a class="lithic-button text-on-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-headline font-bold flex items-center gap-2 hover:scale-105 transition-transform duration-300 text-sm sm:text-base" href="#projects">
-                            View Projects
-                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</a>
-<a class="bg-surface-container-high text-on-surface px-6 sm:px-8 py-3 sm:py-4 rounded-full font-headline font-bold hover:bg-surface-container-highest transition-colors text-sm sm:text-base" href="#contact">
-                            Let's Talk
-                        </a>
-</div>
-</div>
-<div class="lg:col-span-5 relative">
-<div class="aspect-square rounded-full bg-surface-container-highest/50 absolute -top-10 -right-10 w-full animate-pulse"></div>
-<div class="relative z-10 rounded-xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-700">
-<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Modern workspace with high-end mechanical keyboard and curved monitor displaying clean lines of code in a dark mode editor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEHIHy4rjaPoUIm7RVBcRF9UrchYvvhsPRYGfFT3DTTTCGMkcpp2iDNApvOo2RkNRpUtkQRDHEUXPE8IrhAuxAGX-V1GF1JGf-xuIiXfpi5V7yyowJwKZbxX1PbnLhDqi8kVbsX25LAKF4jIWKf6pNVEH23R96gVTYuuNnOaA3w-_z7RJJTAN9TZWCjjUpMb3vlQj47hz8pWsWIJUgxTKfle1CN1a1Dm8e6cr57oFOpN5t80P2i1HA-riWB_6vsgzqtS3Iyu5FGjQR">
-</div>
-</div>
-</div>
-</section>
-<!-- About Section -->
-<section class="py-16 sm:py-24 lg:py-32 bg-surface-container-low dark:bg-slate-900/50" id="about">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-start">
-<div class="lg:col-span-5">
-<h2 class="text-sm font-label uppercase tracking-widest text-primary mb-4">The Precision Curator</h2>
-<h3 class="text-3xl sm:text-4xl font-headline font-bold tracking-tight mb-6 sm:mb-8">Architecting Digital Experiences with Technical Rigor.</h3>
-<div class="w-24 h-1 bg-primary mb-8"></div>
-</div>
-<div class="lg:col-span-7 space-y-6">
-<p class="text-base sm:text-lg text-on-surface-variant leading-relaxed">
-                            I approach web development as an architectural discipline. Beyond just writing code, I curate digital environments that balance structural integrity with aesthetic minimalism. With deep expertise in PHP ecosystems and a forward-thinking approach to AI integration, I build tools that are as performant as they are precise.
-                        </p>
-<p class="text-base sm:text-lg text-on-surface-variant leading-relaxed">
-                            My methodology integrates SEO strategy at the foundation level, ensuring that every project is not just a visual success but a functional catalyst for growth. I believe in the "No-Line" rule—seamless transitions and invisible complexity.
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Capabilities (Bento Grid) -->
-<section class="py-16 sm:py-24 lg:py-32 bg-surface dark:bg-background-dark" id="capabilities">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="mb-10 sm:mb-12 lg:mb-16">
-<h2 class="text-sm font-label uppercase tracking-widest text-primary mb-2">Capabilities</h2>
-<h3 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold tracking-tight">Technical Ecosystem</h3>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="md:col-span-2 p-6 sm:p-8 lg:p-10 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm hover:shadow-lg transition-all dark:bg-surface-dark dark:border-slate-800">
-<span class="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-6" data-icon="data_object">data_object</span>
-<h4 class="text-xl sm:text-2xl font-headline font-bold mb-4">PHP &amp; App Development</h4>
-<p class="text-on-surface-variant mb-6">Robust backend architectures built with modern PHP. Scalable, secure, and optimized for high-traffic environments using enterprise-grade frameworks.</p>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 rounded-sm bg-secondary-fixed-dim text-on-secondary-fixed text-xs font-label">LARAVEL</span>
-<span class="px-3 py-1 rounded-sm bg-secondary-fixed-dim text-on-secondary-fixed text-xs font-label">SYMFONY</span>
-<span class="px-3 py-1 rounded-sm bg-secondary-fixed-dim text-on-secondary-fixed text-xs font-label">MYSQL</span>
-</div>
-</div>
-<div class="p-6 sm:p-8 lg:p-10 bg-primary text-on-primary rounded-xl flex flex-col justify-between">
-<div class="">
-<span class="material-symbols-outlined text-3xl sm:text-4xl mb-6" data-icon="psychology">psychology</span>
-<h4 class="text-xl sm:text-2xl font-headline font-bold mb-4">AI Prompting</h4>
-<p class="opacity-80">Leveraging Large Language Models to accelerate development cycles and create intelligent user interfaces.</p>
-</div>
-<div class="mt-8 flex gap-2">
-<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
-<span class="font-label text-xs uppercase tracking-widest">Efficiency++</span>
-</div>
-</div>
-<div class="p-6 sm:p-8 lg:p-10 bg-surface-container-lowest rounded-xl border border-outline-variant/10 shadow-sm dark:bg-surface-dark dark:border-slate-800">
-<span class="material-symbols-outlined text-primary text-3xl sm:text-4xl mb-6" data-icon="troubleshoot">troubleshoot</span>
-<h4 class="text-xl sm:text-2xl font-headline font-bold mb-4">SEO Strategy</h4>
-<p class="text-on-surface-variant">Core web vitals, semantic HTML structure, and strategic metadata mapping for maximum visibility.</p>
-</div>
-<div class="md:col-span-2 p-6 sm:p-8 lg:p-10 bg-surface-container rounded-xl flex items-center gap-6 sm:gap-10 lg:gap-12">
-<div class="hidden sm:block">
-<div class="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-5xl" data-icon="auto_awesome">auto_awesome</span>
-</div>
-</div>
-<div>
-<h4 class="text-xl sm:text-2xl font-headline font-bold mb-4">Fluid Design Systems</h4>
-<p class="text-on-surface-variant">Creating responsive, accessible, and ultra-fast frontend experiences using Tailwind CSS and modern JS patterns.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Selected Work -->
-<section class="py-16 sm:py-24 lg:py-32 bg-surface-container-low dark:bg-slate-900/50" id="projects">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 sm:gap-0 mb-10 sm:mb-12 lg:mb-16">
-<div>
-<h2 class="text-sm font-label uppercase tracking-widest text-primary mb-2">Featured Project</h2>
-<h3 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-bold tracking-tight">Urban Bharat</h3>
-</div>
-<a class="text-primary font-bold flex items-center gap-2 group" href="#">
-                        View Case Study
-                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="trending_flat">trending_flat</span>
-</a>
-</div>
-<div class="relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-2xl dark:bg-surface-dark">
-<div class="grid grid-cols-1 lg:grid-cols-12">
-<div class="lg:col-span-7 aspect-video overflow-hidden">
-<img class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" data-alt="Elegant dashboard interface for Urban Bharat platform featuring minimalist data visualizations and clean typography in a professional blue theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgC5i0wBl4A3LQeN60blaD4fXBCG1Va24C-dlSaX1oME_8CKaSbGFPprpwZq46zCBqRgaeA7IeBgOZOHZF5I2YRtYyZk-rlS7_IY9hPYwqSXUUSjFpyjV4JrnRydAw--EbMdHz3U8jynvhPqDaKh7s9w2Xd3Toi-k1y_dylHVBRJb7O-UjEwS6GZOKNlMK307bnK-_wRXhNCsGGFxQTVOvrN--0yNPiGUoTQzt4sRTf4uWjF-kIHzYvpAB4l1uDRq2qpkCCWTu4p-z">
-</div>
-<div class="lg:col-span-5 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
-<span class="text-primary font-label text-xs tracking-widest uppercase mb-4">Case Study: E-Commerce Revolution</span>
-<h4 class="text-2xl sm:text-3xl font-headline font-extrabold mb-6">A high-performance marketplace platform.</h4>
-<p class="text-on-surface-variant mb-8 leading-relaxed">
-                                Engineered a bespoke PHP-based infrastructure for Urban Bharat, focusing on sub-second load times and a seamless transactional flow. Integrated advanced SEO mapping that resulted in a 140% increase in organic reach.
-                            </p>
-<div class="space-y-4">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="speed">speed</span>
-</div>
-<span class="font-bold">98/100 Lighthouse Performance</span>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="shopping_cart">shopping_cart</span>
-</div>
-<span class="font-bold">Custom Checkout Engine</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Tools & Environment -->
-<section class="py-16 sm:py-20 lg:py-24 bg-surface">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h3 class="text-sm font-label uppercase tracking-widest text-primary mb-8 sm:mb-10 lg:mb-12">Tools &amp; Environment</h3>
-<div class="flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-24 opacity-60">
-<div class="flex flex-col items-center gap-2 group hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-3xl sm:text-4xl" data-icon="terminal">terminal</span>
-<span class="text-xs font-label">VS CODE</span>
-</div>
-<div class="flex flex-col items-center gap-2 group hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-3xl sm:text-4xl" data-icon="query_stats">query_stats</span>
-<span class="text-xs font-label">G-CONSOLE</span>
-</div>
-<div class="flex flex-col items-center gap-2 group hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-3xl sm:text-4xl" data-icon="smart_toy">smart_toy</span>
-<span class="text-xs font-label">AI TOOLS</span>
-</div>
-<div class="flex flex-col items-center gap-2 group hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-3xl sm:text-4xl" data-icon="hub">hub</span>
-<span class="text-xs font-label">GIT</span>
-</div>
-<div class="flex flex-col items-center gap-2 group hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-3xl sm:text-4xl" data-icon="cloud">cloud</span>
-<span class="text-xs font-label">DOCKER</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Inquiries / Contact -->
-<section class="py-16 sm:py-24 lg:py-32 bg-surface-container-high relative overflow-hidden dark:bg-slate-900" id="contact">
-<div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-1/2"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-24">
-<div>
-<h2 class="text-3xl sm:text-4xl lg:text-5xl font-headline font-extrabold tracking-tighter mb-6">Inquiries</h2>
-<p class="text-base sm:text-lg lg:text-xl text-on-surface-variant mb-10 sm:mb-12 max-w-md">
-                            Have a complex technical challenge? Let’s curate a solution together. I'm currently open to select freelance partnerships and consulting roles.
-                        </p>
-<div class="space-y-8">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm dark:bg-surface-dark dark:border-slate-700">
-<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
-</div>
-<div>
-<p class="text-xs font-label uppercase tracking-widest opacity-60">Email Me</p>
-<p class="font-bold">shikhar@dev.mail</p>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm dark:bg-surface-dark dark:border-slate-700">
-<span class="material-symbols-outlined text-primary" data-icon="share">share</span>
-</div>
-<div>
-<p class="text-xs font-label uppercase tracking-widest opacity-60">Follow Me</p>
-<div class="flex gap-4 mt-1">
-<a class="text-sm font-bold hover:text-primary transition-colors" href="#">LinkedIn</a>
-<a class="text-sm font-bold hover:text-primary transition-colors" href="#">GitHub</a>
-<a class="text-sm font-bold hover:text-primary transition-colors" href="#">Twitter</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-6 sm:p-8 lg:p-10 rounded-xl shadow-xl border border-white/50 dark:bg-surface-dark dark:border-slate-700">
-<form class="space-y-6">
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="space-y-2">
-<label class="text-xs font-label uppercase tracking-widest">Name</label>
-<input class="w-full bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/40 transition-all px-4 py-3 dark:bg-slate-800 dark:text-white dark:placeholder-slate-500" placeholder="John Doe" type="text">
-</div>
-<div class="space-y-2">
-<label class="text-xs font-label uppercase tracking-widest">Email</label>
-<input class="w-full bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/40 transition-all px-4 py-3 dark:bg-slate-800 dark:text-white dark:placeholder-slate-500" placeholder="john@example.com" type="email">
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-xs font-label uppercase tracking-widest">Service</label>
-<select class="w-full bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/40 transition-all px-4 py-3 dark:bg-slate-800 dark:text-white dark:placeholder-slate-500">
-<option>Web Development</option>
-<option>SEO Strategy</option>
-<option>AI Implementation</option>
-<option>Technical Consultation</option>
-</select>
-</div>
-<div class="space-y-2">
-<label class="text-xs font-label uppercase tracking-widest">Message</label>
-<textarea class="w-full bg-surface-container-low border-none rounded-md focus:ring-2 focus:ring-primary/40 transition-all px-4 py-3 dark:bg-slate-800 dark:text-white dark:placeholder-slate-500" placeholder="Tell me about your project..." rows="4"></textarea>
-</div>
-<button class="w-full lithic-button text-on-primary py-4 rounded-full font-headline font-bold hover:scale-[1.02] active:scale-95 transition-all" type="submit">
-                                Send Inquiry
-                            </button>
-</form>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-slate-100 dark:bg-slate-900 w-full py-10 sm:py-12 px-4 sm:px-6 lg:px-8 mt-16 sm:mt-20">
-<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto border-t border-slate-200 dark:border-slate-800 pt-8">
-<div class="mb-6 md:mb-0">
-<span class="font-manrope font-black text-slate-900 dark:text-white tracking-tighter text-xl">SHIKHAR.DEV</span>
-<p class="text-xs text-slate-500 font-inter mt-1">THE PRECISION CURATOR</p>
-</div>
-<p class="font-inter text-sm tracking-normal opacity-60 text-[#0A2540] dark:text-slate-100 text-center md:text-left">
-                © 2024 SHIKHAR SRIVASTAV. BUILT WITH PRECISION.
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-surface pt-20 text-on-surface antialiased">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-outline/40 bg-white">
+        <nav class="mx-auto flex max-w-6xl items-center gap-4 px-6 py-4">
+            <span class="material-symbols-outlined text-primary" aria-hidden="true">terminal</span>
+            <span class="text-base sm:text-xl font-extrabold tracking-tighter text-slate-900 font-mono">S.DEV // PRECISION</span>
+
+            <div class="ml-auto flex items-center gap-4 sm:gap-6 text-sm font-semibold">
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#projects">Projects</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home" class="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 lg:flex-row lg:items-center">
+        <section class="space-y-6 lg:w-1/2">
+            <p class="glass-pill inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-on-surface">
+                <span class="h-2 w-2 rounded-full bg-primary"></span>
+                Available for projects
             </p>
-<div class="flex gap-8 mt-6 md:mt-0 font-inter text-sm text-[#0A2540] dark:text-slate-100">
-<a class="opacity-60 hover:opacity-100 transition-opacity" href="#">LinkedIn</a>
-<a class="opacity-60 hover:opacity-100 transition-opacity" href="#">GitHub</a>
-<a class="opacity-60 hover:opacity-100 transition-opacity" href="#">Twitter</a>
-</div>
-</div>
-</footer>
-<script defer src="main.js"></script>
-</body></html>
+
+            <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-slate-900">
+                SHIKHAR
+                <br>
+                <span class="text-primary">SHRIVASTAVA</span>
+            </h1>
+
+            <p class="text-base sm:text-lg leading-relaxed text-slate-700">
+                Web Developer <span class="font-semibold text-slate-900">specializing in PHP architecture</span>,
+                AI prompting, and strategic SEO implementations for the modern web.
+            </p>
+
+            <div class="flex flex-wrap gap-3 sm:gap-4">
+                <a class="lithic-button text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold inline-flex items-center gap-2 hover:scale-105 transition-transform duration-300 text-sm sm:text-base" href="#projects">
+                    View Projects
+                    <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                </a>
+                <a class="bg-surface-container-high text-on-surface px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:bg-surface-container-highest transition-colors text-sm sm:text-base" href="#about">
+                    Let's Talk
+                </a>
+            </div>
+        </section>
+
+        <figure class="relative z-10 rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-700 lg:w-1/2">
+            <img
+                class="hero-coding-image w-full h-full object-cover brightness-110 saturate-110 transition-transform duration-1000"
+                alt="Modern workspace with mechanical keyboard and monitor showing code in a dark editor"
+                loading="lazy"
+                decoding="async"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEHIHy4rjaPoUIm7RVBcRF9UrchYvvhsPRYGfFT3DTTTCGMkcpp2iDNApvOo2RkNRpUtkQRDHEUXPE8IrhAuxAGX-V1GF1JGf-xuIiXfpi5V7yyowJwKZbxX1PbnLhDqi8kVbsX25LAKF4jIWKf6pNVEH23R96gVTYuuNnOaA3w-_z7RJJTAN9TZWCjjUpMb3vlQj47hz8pWsWIJUgxTKfle1CN1a1Dm8e6cr57oFOpN5t80P2i1HA-riWB_6vsgzqtS3Iyu5FGjQR"
+            >
+        </figure>
+    </main>
+
+    <section id="about" class="mx-auto max-w-6xl px-6 pb-16">
+        <div class="rounded-2xl border border-outline/40 bg-surface-container-high p-6 sm:p-10">
+            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">About</h2>
+            <p class="mt-3 text-slate-700">Add your short bio here.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="mx-auto max-w-6xl px-6 pb-16">
+        <div class="rounded-2xl border border-outline/40 bg-surface-container-high p-6 sm:p-10">
+            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">Skills</h2>
+            <p class="mt-3 text-slate-700">Add your skills list here.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="mx-auto max-w-6xl px-6 pb-24">
+        <div class="rounded-2xl border border-outline/40 bg-surface-container-high p-6 sm:p-10">
+            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">Projects</h2>
+            <p class="mt-3 text-slate-700">Add your projects here.</p>
+        </div>
+    </section>
+</body>
+</html>
