@@ -1,0 +1,210 @@
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --border: #e2e8f0;
+  --primary: #7c3aed;
+  --surface-high: #f1f5f9;
+  --surface-highest: #e2e8f0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+}
+nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 18px 80px;
+}
+h1 {
+  margin: 12px 0 10px;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+h1 span {
+  color: var(--primary);
+}
+p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  max-width: 64ch;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Lightweight utility support for the classes already in index.html */
+.text-primary {
+  color: var(--primary);
+}
+.text-slate-900 {
+  color: var(--text);
+}
+.text-white {
+  color: #ffffff;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+@media (min-width: 640px) {
+  .sm\:text-base {
+    font-size: 1rem;
+  }
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+.font-extrabold {
+  font-weight: 800;
+}
+.font-bold {
+  font-weight: 700;
+}
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+@media (min-width: 640px) {
+  .sm\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .sm\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.bg-surface-container-high {
+  background: var(--surface-high);
+}
+.hover\:bg-surface-container-highest:hover {
+  background: var(--surface-highest);
+}
+.text-on-surface {
+  color: var(--text);
+}
+.transition-transform {
+  transition-property: transform;
+}
+.transition-colors {
+  transition-property: background-color, color, border-color;
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+.duration-700 {
+  transition-duration: 700ms;
+}
+.duration-1000 {
+  transition-duration: 1000ms;
+}
+.relative {
+  position: relative;
+}
+.z-10 {
+  z-index: 10;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+}
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+.object-cover {
+  object-fit: cover;
+}
+.rotate-3 {
+  transform: rotate(3deg);
+}
+.hover\:rotate-0:hover {
+  transform: rotate(0deg);
+}
+.lithic-button {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+}
+.lithic-button:hover {
+  filter: brightness(1.05);
+}
+
+.material-symbols-outlined {
+  font-size: 1.2em;
+  vertical-align: -0.15em;
+}
