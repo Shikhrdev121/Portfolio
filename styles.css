@@ -54,11 +54,11 @@ body {
 }
 
 .hero-coding-image {
-    transform: scale(1.02);
+    transform: none;
 }
 
 figure:hover .hero-coding-image {
-    transform: scale(1.08);
+    transform: scale(1.04);
 }
 
 .glass-pill {

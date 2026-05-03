@@ -31,18 +31,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-surface text-on-surface antialiased overflow-x-hidden">
-    <header class="sticky top-0 z-50 border-b border-outline/40 bg-white">
-        <nav class="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-6 py-4">
-            <span class="material-symbols-outlined text-primary" aria-hidden="true">terminal</span>
-            <span class="text-base sm:text-xl font-extrabold tracking-tighter text-slate-900 font-mono">S.DEV // PRECISION</span>
+    <header class="sticky top-0 z-50 border-b border-outline/40 bg-white/80 backdrop-blur-xl">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
+            <a class="inline-flex items-center gap-3" href="#home" aria-label="Go to top">
+                <span class="material-symbols-outlined text-primary" aria-hidden="true">terminal</span>
+                <span class="text-base sm:text-xl font-extrabold tracking-tighter text-slate-900 font-mono">S.DEV // PRECISION</span>
+            </a>
 
-            <div class="flex w-full items-center justify-start gap-4 text-sm font-semibold sm:ml-auto sm:w-auto sm:justify-end sm:gap-6">
+            <div class="hidden items-center gap-6 text-sm font-semibold sm:flex">
                 <a class="nav-link" href="#home">Home</a>
                 <a class="nav-link" href="#about">About</a>
                 <a class="nav-link" href="#skills">Skills</a>
                 <a class="nav-link" href="#projects">Projects</a>
             </div>
+
+            <button
+                id="navToggle"
+                class="sm:hidden inline-flex items-center justify-center rounded-full border border-outline/40 bg-white/60 px-3 py-2 text-slate-900 shadow-sm transition hover:bg-white"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="navMenu"
+            >
+                <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+            </button>
         </nav>
+
+        <div id="navMenu" class="hidden border-t border-outline/30 bg-white/90 backdrop-blur-xl sm:hidden">
+            <div class="mx-auto max-w-6xl px-6 py-4">
+                <div class="grid gap-3 text-sm font-semibold">
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="#projects">Projects</a>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main id="home" class="mx-auto flex max-w-6xl scroll-mt-24 flex-col gap-10 px-6 py-16 lg:flex-row lg:items-center">
@@ -74,9 +98,9 @@
             </div>
         </section>
 
-        <figure class="relative z-10 rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-700 lg:w-1/2 h-64 sm:h-80 lg:h-[460px]">
+        <figure class="relative z-10 rounded-xl overflow-hidden shadow-2xl transform rotate-0 transition-transform duration-700 lg:w-1/2 lg:rotate-2 lg:hover:rotate-0">
             <img
-                class="hero-coding-image w-full h-full object-cover brightness-110 saturate-110 transition-transform duration-1000"
+                class="hero-coding-image w-full h-auto max-h-[460px] object-contain bg-surface-container-highest brightness-110 saturate-110 transition-transform duration-1000"
                 alt="Modern workspace with mechanical keyboard and monitor showing code in a dark editor"
                 loading="lazy"
                 decoding="async"
@@ -420,4 +444,26 @@
         </div>
     </section>
 </body>
+
+<script>
+    (() => {
+        const toggle = document.getElementById("navToggle");
+        const menu = document.getElementById("navMenu");
+        if (!toggle || !menu) return;
+
+        const setOpen = (isOpen) => {
+            menu.classList.toggle("hidden", !isOpen);
+            toggle.setAttribute("aria-expanded", String(isOpen));
+            toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+            const icon = toggle.querySelector(".material-symbols-outlined");
+            if (icon) icon.textContent = isOpen ? "close" : "menu";
+        };
+
+        toggle.addEventListener("click", () => setOpen(menu.classList.contains("hidden")));
+
+        menu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => setOpen(false));
+        });
+    })();
+</script>
 </html>
